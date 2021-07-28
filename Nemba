@@ -1,0 +1,41 @@
+import numpy as np 
+import pandas as pd
+import math 
+
+
+
+"""
+On attempts of palindrome where n > =11 < 20 
+In this excercise I am returning the sum of the palindrome 
+from 11 to x as well as showing the palindrome itself. 
+
+"""
+
+def SUM(value):
+    Sum=0
+    for x in range(1,value+1):
+        Sum+=x
+    return Sum
+
+def Palin(itr):
+    if itr >=11:
+        var,var2=list(str(itr))
+        var=int(var)
+        var2=int(var2)
+        
+        print("Mod: ",var%11)
+        vartimes10_1=var2*10
+        var2sum_1=SUM(var2)
+        SumfirstP=vartimes10_1+var2sum_1
+        
+        vartimes10_2=SUM(var)
+        var2sum_2=var2*10
+        SumsecondP=vartimes10_2+var2sum_2
+        
+        return SumfirstP,SumsecondP
+        
+    else: print("This number cannot be an official palindrome")
+
+#------------------------------------------------------------------------------
+itr=15
+Palin(itr)
